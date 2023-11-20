@@ -1,0 +1,29 @@
+@import 'base/null';
+@import 'base/mixins';
+@import 'base/variables';
+@import 'libs/fonts.scss';
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat&display=swap');
+
+* {
+    font-family: 'Muller', 'Montserrat', 'Alex Brush', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $bg-color;
+    color: #fff;
+}
+
+.container {
+    max-width: 1328px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+
+@import 'base/ui.scss';
+@import 'blocks/header';
+@import 'blocks/banner';
+@import 'blocks/menu';

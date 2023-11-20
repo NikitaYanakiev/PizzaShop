@@ -1,0 +1,58 @@
+.btn {
+    display: inline-block;
+    padding: 17px 70px;
+    border-radius: 100px;
+    background: $main-color;
+    color: #FFF;
+    font-size: 22.439px;
+    font-style: normal;
+    font-weight: 500;
+    transition: all .3s;
+    &:hover {
+        background-position: right center;
+        background-size: 200% auto;
+        -webkit-animation: pulse 2s infinite;
+        animation: pulse 1.5s infinite;
+    }
+}
+
+.bg-text {
+    position: absolute;
+    user-select: none;
+    font-family: Alex Brush;
+    font-size: 209.87px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 109.5%; /* 229.808px */
+    background: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 1px $second-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @media (max-width: 830px) {
+        font-size: 120px;
+    }
+}
+
+@keyframes pulse {
+    0% {
+     box-shadow: 0 0 0 0 #FF5E2A;
+    }
+   
+    70% {
+     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+   
+    100% {
+     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+}
+
+.title {
+    color: #FFF;
+    font-family: Muller;
+    @include adaptiv-value("font-size", 69, 40, 1);
+    font-style: normal;
+    font-weight: 800;
+    line-height: 109.5%; /* 75.741px */
+}

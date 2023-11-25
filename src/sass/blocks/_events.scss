@@ -1,9 +1,9 @@
 .events {
     position: relative;
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
     overflow: hidden;
     @media (max-width:768px) {
-        padding: 50px 0;
+        padding: 50px 0 20px 0;
     }
     // .events__container
     &__container {
@@ -12,8 +12,6 @@
             padding-right: 0;
         }
     }
-    // .events__wrapper
-  
     // .events__row
     &__row {
         display: flex;
@@ -95,6 +93,11 @@
         min-height: 260px;
         border-radius: 30px;
         overflow: hidden;
+        &:hover {
+            img {
+                transform: scale(1.15);
+            }
+        }
         @media (max-width:686px) {
             flex: 0 0 249px;
         }
@@ -144,6 +147,7 @@
             width: 100%;
             display: block;
             border-radius: 30px;
+            transition: all 1s;
         }
     }
     // .events__subtitle
@@ -196,7 +200,7 @@
     &_06 {
         position: absolute;
         left: 0;
-        top: -123px;
+        top: -100px;
         @media (max-width:768px) {
             top: 30px;
         }

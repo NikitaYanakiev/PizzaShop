@@ -78,10 +78,14 @@
                 @include adaptiv-value("max-width", 297, 200, 1);
             }
             @media (max-width:505px) {
+                
+                max-width: 150px;
+            }
+            @media (max-width: 359px) {
                 &:last-child {
                     margin-bottom: 30px;
                 }
-                max-width: 250px;
+                max-width: 300px;
             }
         }
         // .menu__item-img
@@ -152,6 +156,7 @@
                 -webkit-animation: pulse 2s infinite;
                 animation: pulse 1.5s infinite;
             }
+            
         }
         // .menu__item-ingridient
         &__item-ingridient {

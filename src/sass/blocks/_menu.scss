@@ -65,6 +65,7 @@
     }
     // .menu__item
     &__item {
+        cursor: pointer;
         position: relative;
         @include adaptiv-value("max-width", 297, 100, 1);
 
@@ -79,6 +80,15 @@
 
         border-radius: 29.5px;
         background: #210A01;
+        &:hover {
+            .menu__item-img {
+                img {
+                    filter: drop-shadow(0 0px 0.5rem #ff5100);
+                    transform: rotate(100deg);
+                }
+                
+            }
+        }
         @media (max-width:1315px) {
             @include adaptiv-value("max-width", 250, 100, 1);
         }
@@ -103,6 +113,7 @@
         left: 50%;
         transform: translateX(-50%);
         img {
+            transition: all .7s linear;
             width: 100%;
             display: block;
         }

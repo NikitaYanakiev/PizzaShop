@@ -1,55 +1,56 @@
 // Функция для отображения/скрытия меню при клике на бургер-меню
 const handleBurgerClick = () => {
-  const header = document.querySelector('.header');
-  header.classList.toggle('active');
+    const header = document.querySelector('.header');
+    header.classList.toggle('active');
+    document.body.classList.toggle('.lock');
 };
 
 document.querySelector('.header__burger').addEventListener('click', handleBurgerClick);
 
 // Функция для добавления класса при прокрутке страницы
 const handleScroll = () => {
-  const header = document.querySelector("header");
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > 40) {
-      header.classList.add("scrolled");
-  } else {
-      header.classList.remove("scrolled");
-  }
+    const header = document.querySelector("header");
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > 40) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
 };
 
 window.addEventListener("scroll", handleScroll);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const menuButtons = document.querySelectorAll(".menu__btn");
-  const menuItems = document.querySelectorAll(".menu__item");
+    const menuButtons = document.querySelectorAll(".menu__btn");
+    const menuItems = document.querySelectorAll(".menu__item");
 
-  menuButtons.forEach(button => {
-      // Функция для обработки клика по кнопке меню
-      const handleButtonClick = () => {
-          const filterValue = button.textContent.trim();
+    menuButtons.forEach(button => {
+        // Функция для обработки клика по кнопке меню
+        const handleButtonClick = () => {
+            const filterValue = button.textContent.trim();
 
-          // Удаление класса active у всех кнопок меню
-          menuButtons.forEach(btn => {
-              btn.classList.remove("active");
-          });
+            // Удаление класса active у всех кнопок меню
+            menuButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
 
-          // Добавление класса active только к текущей нажатой кнопке меню
-          button.classList.add("active");
+            // Добавление класса active только к текущей нажатой кнопке меню
+            button.classList.add("active");
 
-          menuItems.forEach(item => {
-              const itemDataMenu = item.getAttribute("data-menu");
+            menuItems.forEach(item => {
+                const itemDataMenu = item.getAttribute("data-menu");
 
-              // Показываем элементы, которые соответствуют условиям фильтрации, скрываем остальные
-              if (filterValue === "Show All" || itemDataMenu.includes(filterValue.toLowerCase().replace(" ", "_"))) {
-                  item.style.display = "block";
-              } else {
-                  item.style.display = "none";
-              }
-          });
-      };
+                // Показываем элементы, которые соответствуют условиям фильтрации, скрываем остальные
+                if (filterValue === "Show All" || itemDataMenu.includes(filterValue.toLowerCase().replace(" ", "_"))) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        };
 
-      button.addEventListener("click", handleButtonClick);
-  });
+        button.addEventListener("click", handleButtonClick);
+    });
 });
 
 const menuItems = document.querySelectorAll('.menu__item');
@@ -108,8 +109,6 @@ menuItems.forEach(item => {
         });
     }
 });
-
-
 
 // Функция для обработки нажатия на кнопку заказа
 function handleOrderButtonClick(event) {
@@ -199,7 +198,7 @@ function updateShopCardTotal() {
     deleteButtons.forEach((button) => {
         button.addEventListener('click', handleShopItemDelete);
     });
-    
+
 }
 
 // Находим все элементы .menu__item-btn и навешиваем на них обработчик события клика
@@ -207,8 +206,6 @@ const orderButtons = document.querySelectorAll('.menu__item-btn');
 orderButtons.forEach((button) => {
     button.addEventListener('click', handleOrderButtonClick);
 });
-
-
 
 // Функция для удаления товара из корзины
 function handleShopItemDelete(event) {
@@ -238,7 +235,7 @@ const shopCard = document.querySelector('.header__shop-card');
 const shopBody = document.querySelector('.header__shop-body');
 
 // Обработчик события клика на элементе .header__shop-card
-shopCard.addEventListener('click', function(event) {
+shopCard.addEventListener('click', function (event) {
     event.preventDefault(); // Предотвращаем стандартное действие ссылки
 
     const shopCardSpan = this.querySelector('span.header__shop-total');
@@ -253,3 +250,27 @@ shopCard.addEventListener('click', function(event) {
     }
 });
 
+const smoothScrollToAnchors = () => {
+    const anchors = document.querySelectorAll('a[href*="#"]');
+  
+    anchors.forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+  
+        // Закрыть меню бургера, если оно открыто
+        const header = document.querySelector('.header');
+        if (header.classList.contains('active')) {
+            handleBurgerClick();
+        }
+  
+        const blockID = anchor.getAttribute('href').substr(1);
+  
+        document.getElementById(blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  };
+
+  smoothScrollToAnchors();

@@ -2,6 +2,7 @@
 @import 'base/mixins';
 @import 'base/variables';
 @import 'libs/fonts.scss';
+@import 'base/animation';
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat&display=swap');
 
 * {
@@ -43,6 +44,7 @@ body {
         visibility: hidden;
     }
 }
+
 
 @import 'base/ui.scss';
 @import 'blocks/header';

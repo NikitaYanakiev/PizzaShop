@@ -6,7 +6,7 @@
 }
 
 .anim-left.anim-active {
-    transform: translateX(0);
+    transform: inherit;
     opacity: 1;
     visibility: visible;
     transition: all 0.7s ease 0.3s;
@@ -20,7 +20,7 @@
 }
 
 .anim-right.anim-active {
-    transform: translateX(0);
+    transform: inherit;
     opacity: 1;
     visibility: visible;
     transition: all 1.2s ease ;
@@ -39,7 +39,7 @@
 .anim-top.anim-active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: inherit;
     transition: all 1.2s ease ;
 }
 
@@ -56,7 +56,7 @@
 .anim-down.anim-active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: inherit;
     transition: all 1.2s ease ;
 }
 

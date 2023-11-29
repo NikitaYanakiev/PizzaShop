@@ -72,7 +72,7 @@
 
         @include adaptiv-value("margin-left", 12, 2, 1);
         @include adaptiv-value("margin-right", 12, 2, 1);
-        @include adaptiv-value("margin-bottom", 56, 56, 1);
+        @include adaptiv-value("margin-bottom", 65, 65, 1);
 
         @include adaptiv-value("padding-right", 27, 15, 1);
         @include adaptiv-value("padding-left", 27, 15, 1);
@@ -346,7 +346,7 @@
         width: 100%;
         min-height: 286px;
         @include adaptiv-value("min-height", 286, 175, 1);
-        @include adaptiv-value("margin-bottom", 114, 60, 1);
+        margin-bottom: 120px;
         border-radius: 34px;
         background: url('../img/menu/menu.jpg');
         background-size: 100%;

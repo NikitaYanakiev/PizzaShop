@@ -290,3 +290,4 @@ const smoothScrollToAnchors = () => {
       window.addEventListener('scroll', animateOnScroll);
     }
   });
+
